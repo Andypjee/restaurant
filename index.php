@@ -1,30 +1,10 @@
 <?php
-
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=restaurant", $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully";
-} catch(PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
-}
-
-$stmt = $conn->prepare("SELECT gebruikersnaam, wachtwoord FROM users");
-$stmt->execute();
-
-$result = $stmt->fetchALL();
-
-
-
-
+include 'Connection.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <link rel="stylesheet" href="assets/css/style.css">
     <meta charset="UTF-8">
@@ -32,19 +12,30 @@ $result = $stmt->fetchALL();
     <title>Document</title>
 </head>
 <body>
-<form action="register.php" method="POST">
-    <input type="text" name="gebruikersnaam" placeholder="naam">
-    <input type="password" name="wachtwoord"  placeholder="wachtwoord">
-    <input type="submit" value="registeer">
-    
-</form>
 
-<form action="Inloggen.php" method="GET">
-    <input type="text" name="gebruikersnaam" placeholder="naam">
-    <input type="password" name="wachtwoord"  placeholder="wachtwoord">
-    <input type="submit" value="Inloggen">
+<main>
+    <?php
+    include "header.php";
+    ?>
 
-</form>
+</main>
+
+
+
+
+<!--<form action="register.php" method="POST">-->
+<!--    <input type="text" name="gebruikersnaam" placeholder="naam">-->
+<!--    <input type="password" name="wachtwoord"  placeholder="wachtwoord">-->
+<!--    <input type="submit" value="registeer">-->
+<!--    -->
+<!--</form>-->
+<!---->
+<!--<form action="Inloggen.php" method="GET">-->
+<!--    <input type="text" name="gebruikersnaam" placeholder="naam">-->
+<!--    <input type="password" name="wachtwoord"  placeholder="wachtwoord">-->
+<!--    <input type="submit" value="Inloggen">-->
+<!---->
+<!--</form>-->
 
 <?php
 foreach ($result as $row){
