@@ -23,19 +23,19 @@ include 'Connection.php';
 
 
 
-<!--<form action="register.php" method="POST">-->
-<!--    <input type="text" name="gebruikersnaam" placeholder="naam">-->
-<!--    <input type="password" name="wachtwoord"  placeholder="wachtwoord">-->
-<!--    <input type="submit" value="registeer">-->
-<!--    -->
-<!--</form>-->
-<!---->
-<!--<form action="Inloggen.php" method="GET">-->
-<!--    <input type="text" name="gebruikersnaam" placeholder="naam">-->
-<!--    <input type="password" name="wachtwoord"  placeholder="wachtwoord">-->
-<!--    <input type="submit" value="Inloggen">-->
-<!---->
-<!--</form>-->
+<form action="register.php" method="POST">
+<input type="text" name="gebruikersnaam" placeholder="naam">
+<input type="password" name="wachtwoord"  placeholder="wachtwoord">
+<input type="submit" value="registeer">
+
+    form>
+
+    <form action="Inloggen.php" method="GET">-->
+        <input type="text" name="gebruikersnaam" placeholder="naam">-->
+        <input type="password" name="wachtwoord"  placeholder="wachtwoord">-->
+        <input type="submit" value="Inloggen">
+
+    </form><
 
 <?php
 foreach ($result as $row){

@@ -11,8 +11,12 @@ nav{
 }
 nav p{
   color: white;
-display: flex;
+  display: flex;
   justify-content: center;
+  background-color: blue;
+  height: 50px;
+  width: 100px;
+  border-radius: 50px;
 }
 body{
   background-color: greenyellow;

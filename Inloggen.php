@@ -1,19 +1,21 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<?php include ('header.php')?>
+    <?php include('Connection.php')?>
+<form>
 
+<form action="Inloggen.php" method="GET">
+    <input type="text" name="gebruikersnaam" placeholder="naam">
+    <input type="password" name="wachtwoord"  placeholder="wachtwoord">
+    <input type="submit" value="Inloggen">
 
-include 'Connection.php';
-
-$user = $_GET['gebruikersnaam'];
-$pass = $_GET['wachtwoord'];
-
-$stmt = $conn->prepare("SELECT gebruikersnaam, wachtwoord FROM users WHERE gebruikersnaam='$user' AND wachtwoord='$pass'");
-$stmt->execute();
-$result = $stmt->fetch();
-var_dump($result);
-
-if(isset($result)){
-    echo 'klopt';
-}
-else{
-    echo 'niet';
-}
+</form>
+</body>
+</html>
