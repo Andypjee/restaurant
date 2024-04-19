@@ -12,7 +12,7 @@ try {
 //    echo "Connection failed: " . $e->getMessage();
 }
 
-$stmt = $conn->prepare("SELECT gebruikersnaam, wachtwoord FROM users");
+$stmt = $conn->prepare("SELECT username, password FROM users");
 $stmt->execute();
 
 $result = $stmt->fetchALL();

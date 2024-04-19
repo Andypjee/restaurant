@@ -12,36 +12,21 @@ include 'Connection.php';
     <title>Document</title>
 </head>
 <body>
-
+<?php include "header.php"; ?>
 <main>
-    <?php
-    include "header.php";
-    ?>
+  
+   <img src="img/Snacks" alt="">
+   
 
 </main>
 
 
 
 
-<form action="register.php" method="POST">
-<input type="text" name="gebruikersnaam" placeholder="naam">
-<input type="password" name="wachtwoord"  placeholder="wachtwoord">
-<input type="submit" value="registeer">
 
-    form>
 
-    <form action="Inloggen.php" method="GET">-->
-        <input type="text" name="gebruikersnaam" placeholder="naam">-->
-        <input type="password" name="wachtwoord"  placeholder="wachtwoord">-->
-        <input type="submit" value="Inloggen">
 
-    </form><
 
-<?php
-foreach ($result as $row){
-    echo '<h1> gebruikersnaam: '.$row["gebruikersnaam"] . '</h1>';
-    echo '<h3> wachtwoord: '.$row["wachtwoord"] . '</h3>';
-}
-?>
+
 </body>
 </html>

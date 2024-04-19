@@ -7,9 +7,10 @@
 
     <?php include ('header.php')?>
     <?php include('Connection.php')?>
- 
+    <div class="adminPage">
    <h2>Product toevoegen</h2>
-    <form action="createproduct.php" method="post">
+    <div class="toevoegen"></div>
+   <form action="createproduct.php" method="post">
     <p>productnaam <input type="text" name="productnaam"></p>
     <p>omschrijving <input type="text" name="omschrijving"></p>
     <p>prijs <input type="text" name="prijs"></p>
@@ -53,7 +54,7 @@ foreach ($result as $key => $value){
     <p>product id <input type="text" name="id"></p>
     <input type="submit" name="submit" value="Sturen">
 
-
+</div>
 </body>
 
 </html>

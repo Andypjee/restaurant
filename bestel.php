@@ -15,12 +15,15 @@
     
 
     foreach ($result as $key => $value){
-        echo '<div class=productalgemeen'. $key . '">';
+        echo '<div class=productalgemeen hoi'. $key . '">';
         foreach ($value as $key1 => $value2){
             if ($key1 == 'productnaam') {
             echo '<h1>' . $value2 . '</h1>';
         }
         elseif ($key1 == 'omschrijving'){
+            echo '<h2>' . $value2 . '</h2>';
+        }
+        elseif($key1 == 'prijs'){
             echo '<h2>' . $value2 . '</h2>';
         }
         }

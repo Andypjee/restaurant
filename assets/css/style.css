@@ -5,22 +5,66 @@
 }
 nav{
   height: 100px;
-  background-color: green;
+  background-color: rgb(225, 146, 18);
  display: flex ;
   align-items: center;
+  justify-content: center;
+  gap: 350px;
+}
+nav div{
+  display: flex;
+ 
+}
+main{
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
 }
 nav p{
   color: white;
   display: flex;
+  text-align: center;
   justify-content: center;
   background-color: blue;
   height: 50px;
   width: 100px;
   border-radius: 50px;
 }
+nav img{
+  height: 75px;
+  width: 75px;
+  border-radius: 50px;
+  margin-right: 200px;
+}
 body{
-  background-color: greenyellow;
+  background-color: rgb(181, 149, 101);
 }
 .productalgemeen{
-    background: red;
+    background: rgb(107, 180, 4);
+    border-radius: 10px;
+    width: 400px;
+    height: 150px;
+    
 }
+.adminpage{
+  display: flex ;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+ 
+
+}
+input[type="text"],
+input[type="password"] {
+  background-color: grey;
+  height: 50px;
+  width: 750px;
+  text-align: center;
+}
+input[type="submit"] {
+  background-color: grey;
+  height: 50px;
+  width: 750px;
+  margin: 25px;
+}
+

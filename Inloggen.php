@@ -9,13 +9,22 @@
 <body>
 <?php include ('header.php')?>
     <?php include('Connection.php')?>
-<form>
+<!--<form>-->
+<!---->
+<!--<form action="Inloggen.php" method="GET">-->
+<!--    <input type="text" name="username" placeholder="naam">-->
+<!--    <input type="password" name="password"  placeholder="wachtwoord">-->
+<!--    <input type="submit" value="Inloggen">-->
+<!---->
+<!--</form>-->
+    <form method="post" action="inlog.php">
 
-<form action="Inloggen.php" method="GET">
-    <input type="text" name="gebruikersnaam" placeholder="naam">
-    <input type="password" name="wachtwoord"  placeholder="wachtwoord">
-    <input type="submit" value="Inloggen">
+        <label for="username">Gebruikersnaam:</label><br>
+        <input type="text" id="username" name="username" required><br>
 
-</form>
+        <label for="password">Wachtwoord:</label><br>
+        <input type="password" id="password" name="password" required><br>
+
+        <input id="submit-align" type="submit" name="login" value="Login">
 </body>
 </html>

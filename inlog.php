@@ -1,26 +1,41 @@
 <?php
-
-
 include 'Connection.php';
 
-session_start();
-$user = $_GET['gebruikersnaam'];
-$pass = $_GET['wachtwoord'];
-
-$stmt = $conn->prepare("SELECT gebruikersnaam, wachtwoord FROM users WHERE gebruikersnaam='$user' AND wachtwoord='$pass'");
-$stmt->execute();
-$result = $stmt->fetch();
-var_dump($result);
-
-
-$data = $stmt->fetch();
-var_dump($data);
-var_dump($result);
-if(isset($result)){
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
+    // Gebruikersnaam en wachtwoord van het formulier ophalen
     session_start();
-    $_SESSION['user'] = $data['gebruikersnaam'];
-    $_SESSION['rol'] = $data['admin'];
-}
-else{
-    echo 'niet';
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    try {
+
+        $stmt = $conn->prepare("SELECT id, username, password, is_admin FROM users WHERE username = :username AND password = :password");
+        //SELECT password is om te testen of die checkt
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':password', $password);
+
+        // Uitvoeren van de query
+        $result = $stmt->execute();
+
+        // Controleren of er resultaten zijn
+        $data = $stmt->fetch();
+
+        if ($result) {
+            $_SESSION['logged_in'] = true;
+            $_SESSION['username'] = $data['username'];
+
+            if ($data['is_admin'] == 1) {
+                $_SESSION['is_admin'] = 'admin'; // Sla op of de gebruiker een admin is
+                header("Location: adminPage.php");
+            } else {
+                header("Location: index.php");
+            }
+            exit();
+        } else {
+            // Ongeldige inloggegevens
+            echo "Ongeldige gebruikersnaam of wachtwoord.";
+        }
+    } catch (PDOException $e) {
+        echo "Fout bij het inloggen: " . $e->getMessage();
+    }
 }
